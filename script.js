@@ -1,29 +1,24 @@
-function clearError(id) {
-  document.getElementById(id).innerText = "";
-}
-
 function checkPasswordStrength() {
   let password = document.getElementById("password").value;
   let strengthText = document.getElementById("passwordStrength");
 
   let hasUpper = /[A-Z]/.test(password);
   let hasNumber = /[0-9]/.test(password);
-  let hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+  let hasSpecial = /[!@#$%^&*]/.test(password);
   let minLength = password.length >= 8;
 
-  let strength = hasUpper + hasNumber + hasSpecial + minLength;
+  let score = hasUpper + hasNumber + hasSpecial + minLength;
 
-  if (password.length === 0) strengthText.innerText = "";
-  else if (strength <= 1) {
-    strengthText.innerText = "Weak Password";
+  if (!password) {
+    strengthText.innerHTML = "";
+  } else if (score <= 1) {
+    strengthText.innerHTML = "Weak Password";
     strengthText.style.color = "red";
-  }
-  else if (strength <= 3) {
-    strengthText.innerText = "Medium Strength";
+  } else if (score <= 3) {
+    strengthText.innerHTML = "Medium Strength";
     strengthText.style.color = "orange";
-  }
-  else {
-    strengthText.innerText = "Strong Password";
+  } else {
+    strengthText.innerHTML = "Strong Password";
     strengthText.style.color = "#00ff9d";
   }
 }
@@ -57,10 +52,10 @@ function validateForm() {
     password.length < 8 ||
     !/[A-Z]/.test(password) ||
     !/[0-9]/.test(password) ||
-    !/[!@#$%^&*(),.?":{}|<>]/.test(password)
+    !/[!@#$%^&*]/.test(password)
   ) {
     document.getElementById("passwordError").innerText =
-      "Password must include uppercase, number, special char & 8+ characters.";
+      "Password must include uppercase, number, special character & 8+ characters.";
     valid = false;
   }
 
@@ -76,7 +71,7 @@ function validateForm() {
 
   if (valid) {
     alert("Form submitted successfully!");
-    window.location.href = "success.html";
+    window.location.href = "success.html";  // WORKING REDIRECT
   }
 
   return false;

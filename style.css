@@ -1,68 +1,91 @@
-/* FULL DARK BACKGROUND */
+
 .dark-bg {
   margin: 0;
-  padding: 0;
   height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a, #111, #1b1b1b);
+  background: linear-gradient(135deg, #0a0a0a, #111, #1c1c1c);
   color: white;
   font-family: "Poppins", sans-serif;
 }
 
-/* Center content */
-.full-height,
-.center-wrapper {
+.form-bg {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #0f0c29);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+
+.form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+.form-control::placeholder {
+  color: #dddddd;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #6a00ff, #b300ff);
+  border: none;
+  padding: 12px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.08);
+}
+
+.center-wrapper,
+.full-height {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Glass effect containers */
-.glass-box {
-  background: rgba(255, 255, 255, 0.09);
+.success-box {
+  width: 380px;
+}
+/* Full center for success page */
+.success-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;  /* PERFECT vertical center */
+}
+
+/* The centered card */
+.success-center-card {
+  width: 350px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
   border-radius: 18px;
-  backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
-  box-shadow: 0px 10px 35px rgba(0,0,0,0.6);
-}
-
-/* Form card style */
-.card {
-  border: none;
-}
-
-/* Inputs */
-.form-control {
-  background: rgba(255,255,255,0.09);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-}
-
-.form-control::placeholder {
-  color: #cccccc;
-}
-
-/* Buttons */
-.btn-primary {
-  background: linear-gradient(90deg, #6a00ff, #b300ff);
-  border: none;
-  padding: 12px;
-  border-radius: 30px;
-  color: white;
-  font-size: 1.1rem;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  transform: scale(1.07);
-}
-
-/* Error and strength text */
-.text-danger {
-  color: #ff6363 !important;
-}
-
-#passwordStrength {
-  font-weight: bold;
+  text-align: center;   /* Text aligned center */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
