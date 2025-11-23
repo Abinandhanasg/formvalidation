@@ -1,12 +1,15 @@
-
-body {
+/* FULL DARK BACKGROUND */
+.dark-bg {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #0f0f0f, #1d1d1d, #111111);
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a, #111, #1b1b1b);
+  color: white;
   font-family: "Poppins", sans-serif;
-  background-size: cover;
 }
 
+/* Center content */
+.full-height,
 .center-wrapper {
   height: 100vh;
   display: flex;
@@ -14,49 +17,52 @@ body {
   align-items: center;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.08);
+/* Glass effect containers */
+.glass-box {
+  background: rgba(255, 255, 255, 0.09);
   border-radius: 18px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: white;
-  box-shadow: 0px 10px 35px rgba(0,0,0,0.5);
+  box-shadow: 0px 10px 35px rgba(0,0,0,0.6);
 }
 
-h2, h3 {
-  color: #ffffff;
-  font-weight: bold;
-  text-align: center;
+/* Form card style */
+.card {
+  border: none;
 }
 
+/* Inputs */
+.form-control {
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+.form-control::placeholder {
+  color: #cccccc;
+}
+
+/* Buttons */
 .btn-primary {
   background: linear-gradient(90deg, #6a00ff, #b300ff);
   border: none;
   padding: 12px;
-  font-size: 1.2rem;
   border-radius: 30px;
   color: white;
-  box-shadow: 0px 0px 12px #a000ff;
+  font-size: 1.1rem;
   transition: 0.3s;
 }
 
 .btn-primary:hover {
-  transform: scale(1.06);
-  box-shadow: 0px 0px 20px #d200ff;
+  transform: scale(1.07);
 }
 
-
-.form-control {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.25);
-  color: white;
-}
-
-
+/* Error and strength text */
 .text-danger {
-  color: #ff6b6b !important;
+  color: #ff6363 !important;
 }
 
 #passwordStrength {
-  color: #00ff9d;
+  font-weight: bold;
 }

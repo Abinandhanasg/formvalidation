@@ -1,9 +1,7 @@
-// Clear error text
 function clearError(id) {
   document.getElementById(id).innerText = "";
 }
 
-// Password Strength Checker
 function checkPasswordStrength() {
   let password = document.getElementById("password").value;
   let strengthText = document.getElementById("passwordStrength");
@@ -30,7 +28,6 @@ function checkPasswordStrength() {
   }
 }
 
-// Main Validation
 function validateForm() {
   let name = document.getElementById("name").value.trim();
   let email = document.getElementById("email").value.trim();
@@ -41,25 +38,21 @@ function validateForm() {
 
   let valid = true;
 
-  // NAME
   if (name.length < 5) {
     document.getElementById("nameError").innerText = "Name must be at least 5 characters.";
     valid = false;
   }
 
-  // EMAIL
   if (!email.includes("@")) {
     document.getElementById("emailError").innerText = "Enter a valid email.";
     valid = false;
   }
 
-  // PHONE
-  if (phone.length !== 10 || phone === "123456789") {
+  if (phone.length !== 10) {
     document.getElementById("phoneError").innerText = "Enter a valid 10-digit number.";
     valid = false;
   }
 
-  // PASSWORD
   if (
     password.length < 8 ||
     !/[A-Z]/.test(password) ||
@@ -67,7 +60,7 @@ function validateForm() {
     !/[!@#$%^&*(),.?":{}|<>]/.test(password)
   ) {
     document.getElementById("passwordError").innerText =
-      "Password must include uppercase, number, special character & 8+ characters.";
+      "Password must include uppercase, number, special char & 8+ characters.";
     valid = false;
   }
 
@@ -76,16 +69,14 @@ function validateForm() {
     valid = false;
   }
 
-  
   if (!terms) {
-    document.getElementById("termsError").innerText = "You must agree to the terms.";
+    document.getElementById("termsError").innerText = "You must accept the terms.";
     valid = false;
   }
 
-
   if (valid) {
     alert("Form submitted successfully!");
-    window.location.href = "calculator.html"; 
+    window.location.href = "success.html";
   }
 
   return false;
